@@ -1,0 +1,71 @@
+{
+  "preload": {
+    "files": [
+      {
+        "type": "bitmapFont",
+        "key": "font",
+        "textureURL": "./assets/font/font.png",
+        "fontDataURL": "./assets/font/font.fnt"
+      },
+
+      {
+        "type": "spritesheet",
+        "key": "plants",
+        "url": "./assets/sprites/plants.png",
+        "frameConfig": {
+          "frameWidth": 16,
+          "frameHeight": 16
+        }
+      },      
+
+
+
+
+
+
+
+      
+      {
+        "type": "spritesheet",
+        "key": "cow-1",
+        "url": "./assets/sprites/cow_1.png",
+        "frameConfig": {
+          "frameWidth": 24,
+          "frameHeight": 24
+        }
+      },
+
+      {
+        "type": "spritesheet",
+        "key": "cow-2",
+        "url": "./assets/sprites/cow_2.png",
+        "frameConfig": {
+          "frameWidth": 24,
+          "frameHeight": 24
+        }
+      },
+
+      {
+        "type": "spritesheet",
+        "key": "cow-3",
+        "url": "./assets/sprites/cow_3.png",
+        "frameConfig": {
+          "frameWidth": 24,
+          "frameHeight": 24
+        }
+      },
+
+      {
+        "type": "spritesheet",
+        "key": "cow-4",
+        "url": "./assets/sprites/cow_4.png",
+        "frameConfig": {
+          "frameWidth": 24,
+          "frameHeight": 24
+        }
+      }
+
+
+    ]
+  }
+}
