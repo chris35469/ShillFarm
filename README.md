@@ -1,6 +1,6 @@
 # Shill Farm
 
-Shill Farm is a hyper-casual gaming experience allowing players to interact with browser-based farm to feed virtual cows created using the Ethereum and Polygon blockchains. If you enjoy your trip, you can join the Cow DAO via $BULLISH tokens, enabling you to curate mushroom trips for others.
+Shill Farm is a hyper-casual gaming experience allowing players to interact with a browser-based farm to feed virtual cows created using the Ethereum and Polygon blockchains. If you enjoy your trip, you can join the Cow DAO via $BULLISH tokens, enabling you to curate mushroom trips for others.
 
 Shill Farm was developed during the ETH Global's [ETHOnline](https://online.ethglobal.com/) Hackathon September 2022 Hackathon. 
 
