@@ -30,6 +30,8 @@ export class WorldScene extends Phaser.Scene {
   private mushroomCount: Number;
   private grassCount: Number;
   private urls: Array<string>;
+  private maxDelay: number;
+  private minDelay: number;
 
   constructor() {
     super({
@@ -48,6 +50,8 @@ export class WorldScene extends Phaser.Scene {
     this.plantCount = 20;
     this.mushroomCount = 30;
     this.grassCount = 50;
+    this.maxDelay = 20000;
+    this.minDelay = 5000;
     
     this.cows = this.add.group({});
     this.plants =  this.add.group({});
@@ -75,7 +79,7 @@ export class WorldScene extends Phaser.Scene {
   createCow(id: string): void {
     let x = this.sys.game.canvas.width * Math.random();
     let y = this.sys.game.canvas.height * Math.random();
-    let cow = new CustomSprite(this, x, y, true, "down-idle", {type: "cow", id});
+    let cow = new CustomSprite(this, x, y, true, `down-idle${id}`, {type: "cow", id});
     cow.setInteractive()
     cow.on('pointerdown', function () {
       var link = this.urls[Math.floor(Math.random()*this.urls.length)];
@@ -91,9 +95,12 @@ export class WorldScene extends Phaser.Scene {
     }
   }
 
-  createMushroom(): void{
-    let x = this.sys.game.canvas.width * Math.random();
-    let y = this.sys.game.canvas.height * Math.random();
+  createMushroom(x: number = null, y: number = null): void{
+    if (x == null || y == null){
+       x = this.sys.game.canvas.width * Math.random();
+       y = this.sys.game.canvas.height * Math.random();
+    }
+   
     let mushroom = new CustomSprite(this, x, y, false, "p2", {type: "mushroom"});
     this.mushrooms.add(mushroom);
   }
@@ -117,33 +124,43 @@ export class WorldScene extends Phaser.Scene {
     }
   }
 
-  createPlant(): void {
-    let x = this.sys.game.canvas.width * Math.random();
-    let y = this.sys.game.canvas.height * Math.random();
+  createPlant(x: number = null, y: number = null): void {
+    if (x == null || y == null){
+      x = this.sys.game.canvas.width * Math.random();
+      y = this.sys.game.canvas.height * Math.random();
+    }
+
     let plant = new CustomSprite(this, x, y, false, "p1", {type: "plant"});
     this.plants.add(plant);
   }
 
   create(): void {
     this.createGrassPatches();
-    this.createMushrooms();
-    this.createPlants();
+    //this.createMushrooms();
+    //this.createPlants();
     this.createCows();
     
 
     this.physics.add.collider(this.cows, this.plants, function (cow: any, plant: any) {
       plant.destroy()
-    })
+      let produceDelay = this.minDelay + Math.random() * this.maxDelay;
+      setInterval(() => {this.createMushroom(cow.body.x, cow.body.y)}, produceDelay)
+    }.bind(this))
 
+
+    /*
     this.physics.add.collider(this.cows, this.mushrooms, function (cow: any, mushroom: any) {
       mushroom.destroy()
-    })
+    })*/
 
     this.input.on('pointerdown', function (pointer: any) {
 
       console.log('down');
 
       console.log(pointer)
+
+      this.createPlant(pointer.worldX, pointer.worldY)
+
   }, this);
 
   }

@@ -56,50 +56,10 @@ export class BootScene extends Phaser.Scene {
     );
 
     this.load.pack('preload', './assets/pack.json', 'preload');
-    //this.createAnimations();
-
-
-
-    // load out package
-
-    /*
-    
-    this.load.html('form', './assets/html/loginform.html');
-    this.load.image("map", "assets/map/map_large.png");
-    this.load.image('ship', '../assets/images/ship.png');
-    this.load.image('grass1', '../assets/sprites/grass1-final.png');
-
-    var sheet = this.load.spritesheet("rabbit", "../assets/sprites/rabbits.png", {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
-
-    var player = this.load.spritesheet("player", "../assets/sprites/walk-final-2.png", {
-      frameWidth: 64,
-      frameHeight: 64,
-    });
-
-    var idleFinal = this.load.spritesheet("player-idle", "../assets/sprites/idle-final-2.png", {
-      frameWidth: 64,
-      frameHeight: 64,
-    });
-
-    var attackFinal = this.load.spritesheet("player-attack", "../assets/sprites/attack-final.png", {
-      frameWidth: 64,
-      frameHeight: 64,
-    });
-
-    var icons = this.load.spritesheet("icons", "../assets/images/icons.png", {
-      frameWidth: 32,
-      frameHeight: 32,
-    });
 
     //audio
-    this.load.audio('song', '../assets/sounds/song.mp3');
-    this.load.audio('charge', '../assets/sounds/c.wav');
-
-
-    */
+    //this.load.audio('song', '../assets/sounds/song.mp3');
+    //this.load.audio('charge', '../assets/sounds/c.wav');
 
   }
 

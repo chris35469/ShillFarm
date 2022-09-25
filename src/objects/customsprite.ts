@@ -113,7 +113,7 @@ export class CustomSprite extends Phaser.Physics.Arcade.Sprite {
 
     generateAnimations(scene: any) {
         for (let i: number = 0; i < 4; i++){
-            console.log( `cow-${i+1}`)
+            //console.log( `cow-${i+1}`)
             animationCreator(scene.anims, `cow-${i+1}`, `down-idle-${i+1}`, 0, 0, 6, -1);
             animationCreator(scene.anims, `cow-${i+1}`, `down-${i+1}`, 0, 3, 6, -1);
             animationCreator(scene.anims, `cow-${i+1}`, `up-idle-${i+1}`, 4, 4, 6, -1);
@@ -134,8 +134,8 @@ export class CustomSprite extends Phaser.Physics.Arcade.Sprite {
     }
 
     downIdle(cowID: any){
-        console.log("----->", `down-idle${cowID}`)
-        this.play(`down-idle-${cowID}`, true);
+        //console.log("----->", `down-idle${cowID}`)
+        this.play(`down-idle${cowID}`, true);
         this.stop();
         this.facingDirection = "downI";
     }
