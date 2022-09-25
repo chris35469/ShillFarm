@@ -32,6 +32,8 @@ export class WorldScene extends Phaser.Scene {
   private urls: Array<string>;
   private maxDelay: number;
   private minDelay: number;
+  private cowLink: string;
+  private cowLinks: any;
 
   constructor() {
     super({
@@ -64,7 +66,20 @@ export class WorldScene extends Phaser.Scene {
       "https://twitter.com/MIKEFLOSSMUSIC/status/1515030695730720771?s=20&t=hwYujcrE148YXuF_CNALjQ",
       "https://twitter.com/ShimmiApp",
       "https://twitter.com/w3bbie_xyz",
-      "https://twitter.com/BigTrav205"
+      "https://twitter.com/BigTrav205",
+      "https://polygon.technology/",
+      "https://www.superfluid.finance/",
+      "https://ethglobal.com/",
+      "https://yearn.finance/"
+    ]
+
+    this.cowLink = "https://opensea.io/assets/ethereum/0x977ce3824a8f818c2c78b8e705b91d089ae0f4dd/"
+
+    this.cowLinks = [
+      "https://www.partybid.app/buy/0x46cA5cD512EafA729Ff2e7Ee481994b5F323EdDb",
+      "https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/91528526890610761304768756408612961673415435662522493420975109596177802199041",
+      "https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/91528526890610761304768756408612961673415435662522493420975109597277313826817",
+      "https://opensea.io/assets/matic/0x2953399124f0cbb46d2cbacd8a89cf0599974963/91528526890610761304768756408612961673415435662522493420975109598376825454593"
     ]
   }
 
@@ -81,10 +96,16 @@ export class WorldScene extends Phaser.Scene {
     let y = this.sys.game.canvas.height * Math.random();
     let cow = new CustomSprite(this, x, y, true, `down-idle${id}`, {type: "cow", id});
     cow.setInteractive()
+
+    
     cow.on('pointerdown', function () {
-      var link = this.urls[Math.floor(Math.random()*this.urls.length)];
-      window.open(link, '_blank');
+      //var link = this.urls[Math.floor(Math.random()*this.urls.length)];
+      let index = parseInt(id.replace("-", "")) - 1 
+      window.open(this.cowLinks[index], '_blank');
     }.bind(this))
+
+   cow.depth = 100
+    
 
     this.cows.add(cow);
   }
@@ -102,6 +123,12 @@ export class WorldScene extends Phaser.Scene {
     }
    
     let mushroom = new CustomSprite(this, x, y, false, "p2", {type: "mushroom"});
+    mushroom.setInteractive()
+    mushroom.on('pointerdown', function () {
+      mushroom.destroy();
+      var link = this.urls[Math.floor(Math.random()*this.urls.length)];
+      window.open(link, '_blank');
+    }.bind(this))
     this.mushrooms.add(mushroom);
   }
 
@@ -130,19 +157,22 @@ export class WorldScene extends Phaser.Scene {
       y = this.sys.game.canvas.height * Math.random();
     }
 
-    let plant = new CustomSprite(this, x, y, false, "p1", {type: "plant"});
+    let plant = new CustomSprite(this, x, y, false, "apple", {type: "apple"});
     this.plants.add(plant);
   }
 
   create(): void {
     this.createGrassPatches();
-    //this.createMushrooms();
-    //this.createPlants();
     this.createCows();
+    let song = this.sound.add('song');
+    song.play("", {loop:true});
+
+    let charge = this.sound.add('charge');
     
 
     this.physics.add.collider(this.cows, this.plants, function (cow: any, plant: any) {
       plant.destroy()
+      charge.play()
       let produceDelay = this.minDelay + Math.random() * this.maxDelay;
       setInterval(() => {this.createMushroom(cow.body.x, cow.body.y)}, produceDelay)
     }.bind(this))
@@ -157,7 +187,7 @@ export class WorldScene extends Phaser.Scene {
 
       console.log('down');
 
-      console.log(pointer)
+      //console.log(pointer)
 
       this.createPlant(pointer.worldX, pointer.worldY)
 

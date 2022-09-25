@@ -1,19 +1,19 @@
 {
-    "short_name": "ZoraLand",
-    "name": "ZoraLand",
+    "short_name": "Shill Farm",
+    "name": "Shill Farm",
     "icons": [
       {
-        "src": "https://w3bbie.xyz/ethglobal/favicon.ico",
+        "src": "https://w3bbie.xyz/ethonline/media/apple1.png",
         "sizes": "64x64 32x32 24x24 16x16",
         "type": "image/x-icon"
       },
       {
-        "src": "https://w3bbie.xyz/ethglobal/logo.png",
+        "src": "https://w3bbie.xyz/ethonline/media/apple1.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "https://w3bbie.xyz/ethglobal/logo.png",
+        "src": "https://w3bbie.xyz/ethonline/media/apple1.png",
         "type": "image/png",
         "sizes": "512x512"
       }

@@ -17,7 +17,7 @@ export class MainMenuScene extends Phaser.Scene {
 
   create(): void {
     let y = this.sys.canvas.height * 0.45;
-    this.addText("SHILL VILLE", 30, 0, 50);
+    this.addText("SHILL FARM", 30, 0, 50);
     this.addText("TAP TO START", 16, 0, y);
     y = this.sys.canvas.height * 0.95;
     this.addText("BUILT BY W3BBIE", 12, 0, y);

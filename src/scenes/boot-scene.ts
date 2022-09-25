@@ -55,11 +55,13 @@ export class BootScene extends Phaser.Scene {
       this
     );
 
+    //audio
+    this.load.audio('song', './assets/sounds/adulthood.mp3');
+    this.load.audio('charge', './assets/sounds/c.wav');
+
     this.load.pack('preload', './assets/pack.json', 'preload');
 
-    //audio
-    //this.load.audio('song', '../assets/sounds/song.mp3');
-    //this.load.audio('charge', '../assets/sounds/c.wav');
+
 
   }
 

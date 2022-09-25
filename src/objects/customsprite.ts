@@ -126,11 +126,11 @@ export class CustomSprite extends Phaser.Physics.Arcade.Sprite {
     }
 
     createAnimations(scene: any) {
-
         this.generateAnimations(scene);
         animationCreator(scene.anims, "plants", "p1", 0, 0, 6, -1);
         animationCreator(scene.anims, "plants", "p2", 63, 63, 6, -1);
         animationCreator(scene.anims, "plants", "p3", 111, 111, 6, -1);
+        animationCreator(scene.anims, "apple", "apple", 0, 0, 6, -1);
     }
 
     downIdle(cowID: any){

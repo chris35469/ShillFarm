@@ -63,8 +63,18 @@
           "frameWidth": 24,
           "frameHeight": 24
         }
+      },
+      
+      
+      {
+        "type": "spritesheet",
+        "key": "apple",
+        "url": "./assets/sprites/apple1.png",
+        "frameConfig": {
+          "frameWidth": 24,
+          "frameHeight": 24
+        }
       }
-
 
     ]
   }
