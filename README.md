@@ -32,24 +32,20 @@ The project's influences include: Bobby Hundreds, Nike, Gary Vaynerchuk.
 ---
 ## Contributors & Credits
 * [Shill Farm Repository](https://github.com/chris35469/ShillFarm)
-* [Contributor Name, Role](https://)
-* [Contributor Name, Role](https://)
-* [Contributor Name, Role](https://)
+* [W3EBBIE NFT Development Studio and Web3 Accelerator](https://violet-crown-74e.notion.site/W3BBIE-7a258cbe79014568b29ee4815e49af41)
+* [Travis Rice, Product Manager](https://www.linkedin.com/in/travislrice/)
+* [Chris Crawford, Fullstack Developer]()
+* [Jack Lester, Product Designer](https://www.linkedin.com/in/jacklester/)
 ---
 ### Building Project
 
 - Clone Phaser+TypeScript project
 - Navigate to directory
 - remove .git:
-    
     `rm -rf .git`
-
 - install dependencies: 
-
     `yarn install`
-
 - run project
-    
     `yarn run dev`
 ---
 ### Customizing Project
