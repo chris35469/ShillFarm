@@ -1,6 +1,6 @@
 # Shill Farm
 
-Shill Farm is a gaming experience where players feed Cows for an opportunity to join the Cow DAO, as well as bid for the collection of Cow NFTs. 
+Shill Farm is a hyper-casual gaming experience allowing players to interact with browser-based farm to feed virtual cows created using the Ethereum and Polygon blockchains. If you enjoy your trip, you can join the Cow DAO via $BULLISH tokens, enabling you to curate mushroom trips for others.
 
 Shill Farm was developed during the ETH Global's [ETHOnline](https://online.ethglobal.com/) Hackathon September 2022 Hackathon. 
 
@@ -18,6 +18,8 @@ The project's influences include: Bobby Hundreds, Nike, Gary Vaynerchuk.
 
 ### Cow DAO
 * Grants access to Cow DAO via the $HROOM token.
+* Comes with governance privileges of the DAO's treasury.
+* StreamS a portion of the proceeds from the $BULLISH launch to the Woodlawn United nonprofit, a Yearn Finance vault, and Team W3BBIE using SuperFluid
  
 ---
 ## Where To Play
@@ -36,24 +38,3 @@ The project's influences include: Bobby Hundreds, Nike, Gary Vaynerchuk.
 * [Travis Rice, Product Manager](https://www.linkedin.com/in/travislrice/)
 * [Chris Crawford, Fullstack Developer]()
 * [Jack Lester, Product Designer](https://www.linkedin.com/in/jacklester/)
----
-### Building Project
-
-- Clone Phaser+TypeScript project
-- Navigate to directory
-- remove .git:
-    `rm -rf .git`
-- install dependencies: 
-    `yarn install`
-- run project
-    `yarn run dev`
----
-### Customizing Project
-
-## Adding Custom Sprite
-## Adding Custom Environment
-## Adding Custom Behaviors
-
-TODO
-
-- build 'create phaser-typescript' project to make initializing phaser-typescript projects easier
